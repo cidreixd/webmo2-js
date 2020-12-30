@@ -3,6 +3,8 @@
 ## Webmo.websocketClient.events on/off
 
 WebSocket接続のイベントリスナー追加と削除
+- webmo.initをするとすべてのイベントリスナーがクリアされます
+- そのため、イベントリスナーの追加はwebmo.init後にする必要があります
 
 イベントのタイプ
 - open
@@ -10,6 +12,10 @@ WebSocket接続のイベントリスナー追加と削除
 - error
 
 ```
+webmo.init()
+
+// イベントリスナーの追加はinit後にする
+
 const onOpen = (e) => {
     console.log(e) // e: Event
 }
