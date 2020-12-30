@@ -1,5 +1,5 @@
 
-# SDK ドキュメント
+# ライブラリ ドキュメント
 
 # Webmo.init or Webmo.create
 
@@ -11,13 +11,12 @@
 - isHttp `[option:boolean]`
   - falseにするとHTTP通信を使わずにWebSocket通信のみにすることができます
   - デフォルト `true`
-- isWebsocket `[option:boolean]`
-  - falseにするとWebSockert通信を使わずにHTTP通信のみにすることができます
+- isWebSocket `[option:boolean]`
+  - falseにするとWebSocket通信を使わずにHTTP通信のみにすることができます
   - デフォルト `true`
 
 ```
 Webmo.init({ host: 'webmo.local' })
-//
 ```
 ```
 const webmo = Webmo.create({ host: 'webmo.local' })
@@ -31,19 +30,19 @@ const webmo = Webmo.create({ host: 'webmo.local' })
 
 ファイルA
 ```
-import Webmo from 'webmo-sdk'
+import Webmo from 'webmo2-js'
 Webmo.init({ host: 'webmo.local' })
 ```
 
 ファイルB
 ```
-import Webmo from 'webmo-sdk'
-Webmo.motor.rotate({ speed: 30 }) // ファイルAで先にinit済みであれば、initせずに利用できます
+import Webmo from 'webmo2-js'
+Webmo.motor.rotate({ speed: 30 }) // ファイルAで先にinit済みであれば、そのまま利用利用できます
 ```
 
 ### 複数のWebmoを利用する場合はcreateを利用することをおすすめします。
 
-別々のWebmoとして作成することができます。
+別々のWebmoオブジェクトとして作成することができます。
 ```
 const webmoA = Webmo.create({ host: '192.168.1.4'})
 const webmoB = Webmo.create({ host: '192.168.1.5'})
@@ -54,9 +53,9 @@ webmoB.motor.rotate({ speed: 30 })
 # モータ制御について
 M5Stack版のWebmoでは1台につき、2つのモータを取り付けることができます。
 
-1つのモータだけを制御する場合やそれぞれ独立して制御する場合は使用するモータ（`Webmo.motor1`または`Webmo.motor2`）だけを意識すれば十分です。
+1つのモータだけを制御する場合やそれぞれ独立して制御する場合は使用するモータ（`Webmo.motor1`または`Webmo.motor2`）を使用するとシンプルです。
 
-2つのモータを制御したい場合は、`Webmo.motor`を活用することで、ぴったり同時に２つのモータの速度を変えたり、停止されたりすることができます。
+2つのモータを制御したい場合は、`Webmo.motor`を使用することで、ぴったり同時に２つのモータの速度を変えたり、停止されたりすることができます。
 
 ### [rotate](#rotate)
 指定した速度で回転します。
@@ -277,6 +276,10 @@ const wait = async (millis) => {
   await new Promise((resolve) => setTimeout(resolve, millis))
 }
 ```
+# その他関数について
 
-別ページにUDP、Event
+[イベントリスナー](./events.md)
+- WebSocket接続・切断等のイベント取得
 
+[UDP通信](./UDP.md)
+- スマホのセンサ情報を利用したインタラクションを設計する

@@ -1,5 +1,5 @@
 {
-  "name": "webmo2-library-javascript",
+  "name": "webmo2-js",
   "version": "1.0.0",
   "main": "dist/index.js",
   "module": "dist/index.js",
