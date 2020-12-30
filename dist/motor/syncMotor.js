@@ -67,28 +67,43 @@ export var createSyncMotor = function () {
             socket = socketClient;
             isInitialized = true;
         },
-        stop: function (prop) { return __awaiter(void 0, void 0, void 0, function () {
+        stop: function (prop, prop2) { return __awaiter(void 0, void 0, void 0, function () {
             return __generator(this, function (_a) {
+                if (prop !== undefined && prop2 !== undefined && !Array.isArray(prop)) {
+                    prop = [prop, prop2];
+                }
                 return [2 /*return*/, send(API.stop, prop)];
             });
         }); },
-        lock: function (prop) { return __awaiter(void 0, void 0, void 0, function () {
+        lock: function (prop, prop2) { return __awaiter(void 0, void 0, void 0, function () {
             return __generator(this, function (_a) {
+                if (prop !== undefined && prop2 !== undefined && !Array.isArray(prop)) {
+                    prop = [prop, prop2];
+                }
                 return [2 /*return*/, send(API.lock, prop)];
             });
         }); },
-        rotate: function (prop) { return __awaiter(void 0, void 0, void 0, function () {
+        rotate: function (prop, prop2) { return __awaiter(void 0, void 0, void 0, function () {
             return __generator(this, function (_a) {
+                if (prop !== undefined && prop2 !== undefined && !Array.isArray(prop)) {
+                    prop = [prop, prop2];
+                }
                 return [2 /*return*/, send(API.rotate, prop)];
             });
         }); },
-        rotateBy: function (prop) { return __awaiter(void 0, void 0, void 0, function () {
+        rotateBy: function (prop, prop2) { return __awaiter(void 0, void 0, void 0, function () {
             return __generator(this, function (_a) {
+                if (prop !== undefined && prop2 !== undefined && !Array.isArray(prop)) {
+                    prop = [prop, prop2];
+                }
                 return [2 /*return*/, send(API.rotateBy, prop)];
             });
         }); },
-        rotateTo: function (prop) { return __awaiter(void 0, void 0, void 0, function () {
+        rotateTo: function (prop, prop2) { return __awaiter(void 0, void 0, void 0, function () {
             return __generator(this, function (_a) {
+                if (prop !== undefined && prop2 !== undefined && !Array.isArray(prop)) {
+                    prop = [prop, prop2];
+                }
                 return [2 /*return*/, send(API.rotateTo, prop)];
             });
         }); },
@@ -97,8 +112,11 @@ export var createSyncMotor = function () {
                 return [2 /*return*/, send(API.getRotation, null)];
             });
         }); },
-        resetRotation: function (prop) { return __awaiter(void 0, void 0, void 0, function () {
+        resetRotation: function (prop, prop2) { return __awaiter(void 0, void 0, void 0, function () {
             return __generator(this, function (_a) {
+                if (prop !== undefined && prop2 !== undefined && !Array.isArray(prop)) {
+                    prop = [prop, prop2];
+                }
                 return [2 /*return*/, send(API.resetRotation, prop)];
             });
         }); },
