@@ -26,37 +26,25 @@ unpkg CDN の場合
 
 # 使い方
 
-```
-import Webmo from 'webmo2-js'
-```
-
-or
 
 ```
-const Webmo = require('webmo-sdk')
-```
-
-# 使い方
-
-
-```
-import Webmo from 'webmo2-js'
+import webmo from 'webmo2-js'
 ```
 or
 ```
-const Webmo = require('webmo2-js')
+const webmo = require('webmo2-js')
 ```
 
 ### 使用例
 
 ```
-import Webmo from 'webmo2-js'
+import webmo from 'webmo2-js'
 
-Webmo.init({ host: 'webmo.local' })
+webmo.init({ host: 'webmo.local' })
 
 // 180度/秒の速度で回転し、3秒後に停止する
-await Webmo.motor.rotate({ speed: 180 })
-await Webmo.wait(3000)
+await webmo.motor.rotate({ speed: 180 })
+await webmo.wait(3000)
 await webmo.motor.stop()
 ```
 
