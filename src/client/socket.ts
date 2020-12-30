@@ -37,7 +37,7 @@ export const socket = () => {
       emitter.emit('UDP', webSocketData)
     } else if (webSocketData.receiveKey) {
       emitter.emit(webSocketData.receiveKey, webSocketData.data)
-      emitter.emit('message', webSocketData.data)
+      emitter.emit('message', webSocketData)
     }
   }
 
@@ -80,10 +80,11 @@ export const socket = () => {
       data,
     }
 
-    if (socket.readyState != 1) {
+    if (socket.readyState !== 1) {
       throw new Error(NOT_OPEN_WEBSOCKET)
     }
     socket.send(JSON.stringify(webSocketData))
+    emitter.emit('send', webSocketData)
     return new Promise((resolve) => {
       emitter.once(key, (response: any) => {
         resolve(response)

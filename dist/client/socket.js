@@ -72,7 +72,7 @@ export var socket = function () {
         }
         else if (webSocketData.receiveKey) {
             emitter.emit(webSocketData.receiveKey, webSocketData.data);
-            emitter.emit('message', webSocketData.data);
+            emitter.emit('message', webSocketData);
         }
     };
     var onClose = function (e) {
@@ -112,10 +112,11 @@ export var socket = function () {
                 key: key,
                 data: data,
             };
-            if (socket.readyState != 1) {
+            if (socket.readyState !== 1) {
                 throw new Error(NOT_OPEN_WEBSOCKET);
             }
             socket.send(JSON.stringify(webSocketData));
+            emitter.emit('send', webSocketData);
             return [2 /*return*/, new Promise(function (resolve) {
                     emitter.once(key, function (response) {
                         resolve(response);

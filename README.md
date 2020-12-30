@@ -1,50 +1,53 @@
-# Webmo2 JavaScriptライブラリ
+# Webmo2 JavaScript ライブラリ
 
-ライブラリを利用すると数行のJavaScriptを記述するだけでWebmoを制御できます。
+ライブラリを利用すると数行の JavaScript を記述するだけで Webmo を制御できます。
 
-このライブラリはJavaScript版（ブラウザ利用）になっております。Node.js版はこちら。
+このライブラリは JavaScript 版（ブラウザ利用）になっております。Node.js 版はこちら。
 
 # インストール
 
-CDN
-- `unpkg`
-- 使った方法を説明する
+yarn の場合
 
-インストール
-- `yarn install`
+```
+yarn install webmo2-js
+```
+
+npm の場合
+
+```
+npm install webmo2-js
+```
+
+unpkg CDN の場合
+
+```
+<script src="https://cdn.jsdelivr.net/gh/cidreixd/webmo2-js/dist/webmo.min.js"></script>
+```
 
 # 使い方
 
-```
-import Webmo from 'webmo-sdk'
-```
 
+```
+import webmo from 'webmo2-js'
+```
 or
+```
+const webmo = require('webmo2-js')
+```
+
+### 使用例
 
 ```
-const Webmo = require('webmo-sdk')
-```
+import webmo from 'webmo2-js'
 
-
-使用例
-```
 webmo.init({ host: 'webmo.local' })
-// モータ1が90度/秒の速度で回転し、1秒後に停止する
-await Webmo.motor1.rotate({ speed: 90 })
-await Webmo.wait(1000)
-await webmo.motor1.stop()
 
-// モータ1が180度/秒の速度で回転し、1秒後に停止する
-await Webmo.motor2.rotate({ speed: 180 })
-await Webmo.wait(1000)
-await webmo.motor2.stop()
-
-await Webmo.wait(500)
-
-// モータ1, モータ2が720度回転して停止する
-Webmo.motor.rotateBy({ degree: 720, speed: 180 })
+// 180度/秒の速度で回転し、3秒後に停止する
+await webmo.motor.rotate({ speed: 180 })
+await webmo.wait(3000)
+await webmo.motor.stop()
 ```
 
-# ドキュメント
+# ライブラリ ドキュメント
 
-[SDK ドキュメント](./docs/document.md)
+[ドキュメント](./docs/document.md)
