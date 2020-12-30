@@ -14,13 +14,13 @@ export interface Motor {
 
 export interface SyncMotor {
   setClient: (prop: SetClient) => void
-  stop: (prop?: SyncRotateStopProp) => Promise<any>
-  lock: (prop?: SyncRotateLockProp) => Promise<any>
-  rotate: (prop: SyncRotateProp, isVolatilize?: boolean) => Promise<any>
-  rotateBy: (prop: SyncRotateByProp) => Promise<any>
-  rotateTo: (prop: SyncRotateToProp) => Promise<any>
+  stop: (prop?: SyncRotateStopProp, prop2?: RotateStopProp | null) => Promise<any>
+  lock: (prop?: SyncRotateLockProp, prop2?: RotateLockProp | null) => Promise<any>
+  rotate: (prop: SyncRotateProp, prop2?: RotateProp | null) => Promise<any>
+  rotateBy: (prop: SyncRotateByProp, prop2?: RotateByProp | null) => Promise<any>
+  rotateTo: (prop: SyncRotateToProp, prop2?: RotateToProp | null) => Promise<any>
   getRotation: () => Promise<any>
-  resetRotation: (prop: SyncRotationResetProp) => Promise<any>
+  resetRotation: (prop: SyncRotationResetProp, prop2?: RotationResetProp | null) => Promise<any>
 }
 
 export interface RotateStopProp {
@@ -49,9 +49,9 @@ export interface RotationResetProp {
   offset?: number
 }
 
-export type SyncRotateStopProp = RotateStopProp | [RotateStopProp | null]
-export type SyncRotateLockProp = RotateLockProp | [RotateLockProp | null]
-export type SyncRotateProp = RotateProp | (RotateProp | null)[]
-export type SyncRotateToProp = RotateToProp | (RotateToProp | null)[]
-export type SyncRotateByProp = RotateByProp | (RotateByProp | null)[]
-export type SyncRotationResetProp = RotationResetProp | (RotationResetProp | null)[]
+export type SyncRotateStopProp = RotateStopProp | (RotateStopProp | null)[] | null
+export type SyncRotateLockProp = RotateLockProp | (RotateLockProp | null)[] | null
+export type SyncRotateProp = RotateProp | (RotateProp | null)[] | null
+export type SyncRotateToProp = RotateToProp | (RotateToProp | null)[] | null
+export type SyncRotateByProp = RotateByProp | (RotateByProp | null)[] | null
+export type SyncRotationResetProp = RotationResetProp | (RotationResetProp | null)[] | null

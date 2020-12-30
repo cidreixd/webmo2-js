@@ -26,23 +26,38 @@ export const createSyncMotor = () => {
       isInitialized = true
     },
 
-    stop: async (prop?) => {
+    stop: async (prop?, prop2?) => {
+      if(prop !== undefined && prop2 !== undefined && !Array.isArray(prop)) {
+        prop = [prop, prop2]
+      }
       return send(API.stop, prop)
     },
 
-    lock: async (prop?) => {
+    lock: async (prop?, prop2?) => {
+      if(prop !== undefined && prop2 !== undefined && !Array.isArray(prop)) {
+        prop = [prop, prop2]
+      }
       return send(API.lock, prop)
     },
 
-    rotate: async (prop) => {
+    rotate: async (prop, prop2?) => {
+      if(prop !== undefined && prop2 !== undefined && !Array.isArray(prop)) {
+        prop = [prop, prop2]
+      }
       return send(API.rotate, prop)
     },
 
-    rotateBy: async (prop) => {
+    rotateBy: async (prop, prop2?) => {
+      if(prop !== undefined && prop2 !== undefined && !Array.isArray(prop)) {
+        prop = [prop, prop2]
+      }
       return send(API.rotateBy, prop)
     },
 
-    rotateTo: async (prop) => {
+    rotateTo: async (prop, prop2?) => {
+      if(prop !== undefined && prop2 !== undefined && !Array.isArray(prop)) {
+        prop = [prop, prop2]
+      }
       return send(API.rotateTo, prop)
     },
 
@@ -50,7 +65,10 @@ export const createSyncMotor = () => {
       return send(API.getRotation, null)
     },
 
-    resetRotation: async (prop) => {
+    resetRotation: async (prop, prop2?) => {
+      if(prop !== undefined && prop2 !== undefined && !Array.isArray(prop)) {
+        prop = [prop, prop2]
+      }
       return send(API.resetRotation, prop)
     },
   }
