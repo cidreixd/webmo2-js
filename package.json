@@ -1,0 +1,43 @@
+{
+  "name": "webmo2-library-javascript",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "unpkg": "dist/webmo.min.js",
+  "repository": "https://github.com/cidreixd/webmo2-library-javascript.git",
+  "license": "MIT",
+  "dependencies": {
+    "@types/url-join": "^4.0.0",
+    "@types/uuid": "^8.3.0",
+    "mitt": "^2.1.0",
+    "url-join": "^4.0.1",
+    "uuid": "^8.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.11.2",
+    "@typescript-eslint/eslint-plugin": "^4.2.0",
+    "@typescript-eslint/parser": "^4.2.0",
+    "eslint": "^7.10.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.1.2",
+    "ts-loader": "^8.0.4",
+    "typescript": "^4.0.3",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  },
+  "scripts": {
+    "build": "run-s build:develop build:product build:ts",
+    "build:product": "webpack",
+    "build:develop": "MODE=dev webpack",
+    "build:ts": "tsc",
+    "watch": "MODE=dev webpack --watch"
+  }
+}
