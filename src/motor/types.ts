@@ -20,7 +20,7 @@ export interface SyncMotor {
   rotateBy: (prop: SyncRotateByProp, prop2?: RotateByProp | null) => Promise<any>
   rotateTo: (prop: SyncRotateToProp, prop2?: RotateToProp | null) => Promise<any>
   getRotation: () => Promise<any>
-  resetRotation: (prop: SyncRotationResetProp, prop2?: RotationResetProp | null) => Promise<any>
+  resetRotation: (prop?: SyncRotationResetProp, prop2?: RotationResetProp | null) => Promise<any>
 }
 
 export interface RotateStopProp {
