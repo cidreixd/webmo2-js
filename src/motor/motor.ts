@@ -37,14 +37,19 @@ export const createMotor = (id: number) => {
     },
 
     rotate: async (prop) => {
+      prop.speed = prop.speed ? Math.round(prop.speed) : prop.speed
       return send(API.rotate, prop)
     },
 
     rotateBy: async (prop) => {
+      prop.speed = prop.speed ? Math.round(prop.speed) : prop.speed
+      prop.degree = prop.degree ? Math.round(prop.degree) : prop.degree
       return send(API.rotateBy, prop)
     },
 
     rotateTo: async (prop) => {
+      prop.speed = prop.speed ? Math.round(prop.speed) : prop.speed
+      prop.degree = prop.degree ? Math.round(prop.degree) : prop.degree
       return send(API.rotateTo, prop)
     },
 
@@ -53,6 +58,7 @@ export const createMotor = (id: number) => {
     },
 
     resetRotation: async (prop) => {
+      prop.offset = prop.offset ? Math.round(prop.offset) : prop.offset
       return send(API.resetRotation, prop)
     },
   }
