@@ -82,16 +82,21 @@ export var createMotor = function (id) {
         }); },
         rotate: function (prop) { return __awaiter(void 0, void 0, void 0, function () {
             return __generator(this, function (_a) {
+                prop.speed = prop.speed ? Math.round(prop.speed) : prop.speed;
                 return [2 /*return*/, send(API.rotate, prop)];
             });
         }); },
         rotateBy: function (prop) { return __awaiter(void 0, void 0, void 0, function () {
             return __generator(this, function (_a) {
+                prop.speed = prop.speed ? Math.round(prop.speed) : prop.speed;
+                prop.degree = prop.degree ? Math.round(prop.degree) : prop.degree;
                 return [2 /*return*/, send(API.rotateBy, prop)];
             });
         }); },
         rotateTo: function (prop) { return __awaiter(void 0, void 0, void 0, function () {
             return __generator(this, function (_a) {
+                prop.speed = prop.speed ? Math.round(prop.speed) : prop.speed;
+                prop.degree = prop.degree ? Math.round(prop.degree) : prop.degree;
                 return [2 /*return*/, send(API.rotateTo, prop)];
             });
         }); },
@@ -102,6 +107,7 @@ export var createMotor = function (id) {
         }); },
         resetRotation: function (prop) { return __awaiter(void 0, void 0, void 0, function () {
             return __generator(this, function (_a) {
+                prop.offset = prop.offset ? Math.round(prop.offset) : prop.offset;
                 return [2 /*return*/, send(API.resetRotation, prop)];
             });
         }); },
