@@ -154,7 +154,7 @@ await webmo.motor.rotateTo({ degree: 0, speed: 90 }) // resetRotation()したと
 - `webmo.motor2.stop`
 
 引数
-- smooth: `[option: number]`
+- smooth: `[option: boolean]`
   - `true`: 徐々に速度を緩めながら停止します。
   - `false`: 瞬時に止まります。
   - デフォルト: `true`
@@ -171,7 +171,7 @@ webmo.motor.stop({ smooth: false })
 - `webmo.motor2.lock`
 
 引数
-- smooth: `[option: number]`
+- smooth: `[option: boolean]`
   - `true`: 徐々に速度を緩めながら停止します。
   - `false`: 瞬時に止まります。
   - デフォルト: `true`
