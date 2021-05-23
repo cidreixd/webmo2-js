@@ -50,4 +50,4 @@ await webmo.motor.stop()
 
 # ライブラリ ドキュメント
 
-[ドキュメント](./docs/document.md)
+[ドキュメント](./docs/index.md)
